@@ -35,10 +35,11 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
 # Added Gems:
 # manages file attachments and uploading (requires ImageMagick program)
 gem "paperclip"
+# authentication gem
+gem "sorcery"
 
 
 group :development, :test do
