@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # heroku app
-  root 'drinks#index'
-
   root to: 'articles#index'
   resources :articles do
     resources :comments
