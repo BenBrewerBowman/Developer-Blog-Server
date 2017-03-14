@@ -17,29 +17,6 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:author_name, :body)
   end
 
-  # edit an article
-  # def edit
-    # @article = Article.find(params[:id])
-  # end
-
-  # update an edit
-  # def update
-    # @article = Article.find(params[:id])
-    # @article.update(article_params)
-
-    # flash.notice = "Article '#{@article.title}' was successfully updated"
-
-    # redirect_to article_path(@article)
-  # end
-
-  # delete an article
-  # def destroy
-    # @article = Article.find(params[:id])
-    # @article.destroy
-
-    # flash.notice = "Article '#{@article.title}' was successfully deleted"
-
-    # redirect_to articles_path()
-  # end
+  before_filter :require_login, except: [:create]
 
 end

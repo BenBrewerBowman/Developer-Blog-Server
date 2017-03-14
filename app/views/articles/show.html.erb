@@ -15,12 +15,13 @@
   <% end %>
 </p><br/>
 
-<!-- edit link -->
-<%= link_to "edit", edit_article_path(@article) %>
-
-<!-- delete link (confirm with user before deleting) -->
-<%= link_to "delete", article_path(@article), method: :delete , data: {confirm: "Do you really want to delete the article?"} %><br/>
-<br/>
+<% if logged_in? %>
+  <!-- edit link -->
+  <%= link_to "edit", edit_article_path(@article) %>
+  <!-- delete link (confirm with user before deleting) -->
+  <%= link_to "delete", article_path(@article), method: :delete , data: {confirm: "Do you really want to delete the article?"} %><br/>
+  <br/>
+<% end %>
 
 <!-- comments section -->
 <h3>Comments (<%= @article.comments.size %>)</h3>

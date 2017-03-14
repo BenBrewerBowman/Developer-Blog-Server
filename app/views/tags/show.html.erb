@@ -6,8 +6,10 @@
 	<% end %>
 <br/>
 <br/>
+<% if logged_in? %>
   <%= link_to "Delete '#{@tag.name}' tag", tag_path(@tag), method: :delete , data: {confirm: "Do you really want to delete this tag?"} %><br/>
-<br/>
+	<br/>
+<% end %>
 
   <%= link_to 'Back to Tags', tags_path, :class => "button" %>
 </ul>
