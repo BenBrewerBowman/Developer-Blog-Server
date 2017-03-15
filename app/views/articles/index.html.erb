@@ -1,4 +1,17 @@
+<div class="cover_image">
+  <div class = "image">
+    <%= image_tag("certification-lamp.svg", :alt => "Blog Title Background", :class => "image") %>
+  </div>
+  <p>Developer Blog<span><br />Built on Rails</span></p>
+  <div id="Creator">created by: Benjamin Brewer-Bowman</div>
+</div>
+
+
 <h1>All Articles</h1>
+
+<% if logged_in? %>
+  <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+<% end %>
 
 <ul id="articles">
   <% @articles.each do |article| %>
@@ -8,11 +21,3 @@
     </li>
   <% end %>
 </ul>
-
-<% if logged_in? %>
-  <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
-<% end %>
-
-<br />
-<br />
-<%= link_to "Tags", tags_path %>

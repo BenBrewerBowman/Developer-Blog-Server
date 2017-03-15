@@ -1,36 +1,64 @@
-$primary_color: #bdc3c7;
+// $primary_color: #bdc3c7;
+//
+// body {
+//   background-color: $primary_color;
+//   font: {
+//     family: Verdana, Helvetica, Arial;
+//     size: 14px;
+//   }
+// }
+//
+// a {
+//   color: #0000FF;
+//   img {
+//     border: none;
+//   }
+// }
+//
+// .clear {
+//   clear: both;
+//   height: 0;
+//   overflow: hidden;
+// }
+//
+// #container {
+//   width: 75%;
+//   margin: 0 auto;
+//   background: #fff;
+//   padding: 20px 40px;
+//   border: solid 1px black;
+//   margin-top: 20px;
+// }
+//
+// #content {
+//   clear: both;
+//   padding-top: 20px;
+// }
 
-body {
-  background-color: $primary_color;
-  font: {
-    family: Verdana, Helvetica, Arial;
-    size: 14px;
-  }
+// for testing, delete later
+.showBox{
+  border: box;
+  border-style: dotted;
 }
 
-a {
-  color: #0000FF;
-  img {
-    border: none;
-  }
+body{
+  background-color: #ecf0f1;
 }
 
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
+.flash{
+  position: absolute;
 }
 
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background: #fff;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+.navbar{
+  width: 100%;
+  position: fixed;
 }
 
-#content {
-  clear: both;
-  padding-top: 20px;
+.navbar-item{
+  display: block;
+  position: relative;
+  float: right;
+  text-align: -webkit-match-parent;
+  padding-right: 15px;
+  font-size: 20px;
 }

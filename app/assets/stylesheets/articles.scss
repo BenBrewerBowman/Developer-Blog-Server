@@ -1,3 +1,76 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// title
+.cover_image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+   top: 0px;
+   z-index: -1;
+}
+
+// background image
+.image {
+    width: 100%;
+}
+
+// header
+.cover_image p {
+   position: absolute;
+   top: 10%;
+   padding-left: 65px;
+   font-family: 'Questrial', sans-serif;
+   font-size: 72px;
+}
+
+// rails power (hidden in mobile)
+.cover_image p span{
+   font-style: italic;
+   font-size: 32px;
+}
+
+// creator name
+#Creator{
+  position: absolute;
+  bottom: 35px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+}
+
+/* Smaller than tablet*/
+@media screen and (max-width: 800px) {
+
+  .cover_image p {
+     font-size: 40px;
+  }
+
+  .cover_image p span{
+     font-size: 24px;
+  }
+
+  #Creator{
+    font-size: 15px;
+  }
+
+}
+
+
+/* Smaller than mobile */
+@media only screen and (max-device-width: 450px) {
+
+  .cover_image p {
+     font-size: 80px;
+  }
+
+  .cover_image p span{
+    display: none;
+  }
+
+  #Creator{
+    font-size: 32px;
+  }
+
+}

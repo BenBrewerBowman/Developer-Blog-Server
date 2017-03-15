@@ -3,28 +3,44 @@
   <head>
     <title>BloggerServer</title>
     <%= csrf_meta_tags %>
-
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins|Questrial|Raleway" rel="stylesheet">
+    <!--  font-family: 'Raleway', sans-serif;
+          font-family: 'Poppins', sans-serif;
+          font-family: 'Varela Round', sans-serif; -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <p class="flash">
+    <p class="flash" class="showBox">
       <%= flash.notice %>
     </p>
-    <div id="container">
+
+    <!-- navigation menu -->
+    <div class="navbar">
+      <div class="container">
+        <div class="navbar-list">
+          <!-- login button -->
+          <div class="navbar-item">
+            <% if logged_in? %>
+              <%= "Logged in as #{current_user.email}" %>
+              <%= link_to "(Logout)", logout_path %>
+            <% else %>
+              <%= link_to "(Login)", login_path %>
+            <% end %>
+          </div>
+          <!-- tags button -->
+          <div class="navbar-item"> <%= link_to "Tags", tags_path %></div>
+        </div>
+      </div>
+    </div>
+
+
       <div id="content">
         <%= yield %>
         <hr>
-        <h6>
-          <% if logged_in? %>
-            <%= "Logged in as #{current_user.email}" %>
-            <%= link_to "(logout)", logout_path %>
-          <% else %>
-            <%= link_to "(login)", login_path %>
-          <% end %>
-        </h6>
       </div>
-    </div>
+
   </body>
 </html>

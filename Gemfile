@@ -45,6 +45,8 @@ gem 'jbuilder', '~> 2.5'
 gem "paperclip"
 # authentication gem
 gem "sorcery"
+# skeleton boilerplate on rails
+gem 'skeleton-rails', :git => 'https://github.com/helios-technologies/skeleton-rails'
 
 
 group :development, :test do
