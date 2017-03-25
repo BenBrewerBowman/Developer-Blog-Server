@@ -2,22 +2,28 @@
   <div class = "image">
     <%= image_tag("certification-lamp.svg", :alt => "Blog Title Background", :class => "image") %>
   </div>
-  <p>Developer Blog<span><br />Built on Rails</span></p>
-  <div id="Creator">created by: Benjamin Brewer-Bowman</div>
+  <p>Developer Blog<span>  Powered by Rails</span></p>
+  <div id="Creator">created by: Ben Brewer</div>
 </div>
 
+<div class="container">
 
-<h1>All Articles</h1>
+  <div class="header">
+    <h1>All Articles</h1>
+  </div>
+  <div class="new_article_button">
+    <% if logged_in? %>
+      <a><%= link_to "Create a New Article", new_article_path, class: "button button-primary"%></a>
+    <% end %>
+  </div>
+  <hr>
 
-<% if logged_in? %>
-  <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
-<% end %>
-
-<ul id="articles">
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, article_path(article),
-      class: 'article_title', id: "article_#{article.id}" %>
-    </li>
-  <% end %>
-</ul>
+  <ul id="articles">
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article_path(article), class: "black_link",
+        class: 'article_title', id: "article_#{article.id}" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

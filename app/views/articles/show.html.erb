@@ -1,34 +1,44 @@
-<!-- title -->
-<h1><%= @article.title %></h1>
 
-<!-- image -->
-<p><%= image_tag @article.image.url %></p>
+<div id="show" class="container centered ">
+  <div class="clear_navbar"></div>
+  <div class="article_outline">
+    <!-- title -->
+    <div class="article_name">
+      <h1><%= @article.title %></h1>
+    </div>
+    <!-- image -->
+    <div class="article_image">
+      <p><%= image_tag @article.image.url %></p>
+    </div>
 
-<!-- body text -->
-<p><%= @article.body %></p><br/>
+    <!-- body text -->
+    <p><%= @article.body %></p><br/>
 
-<!-- each tag -->
-<p>
-  Tags:
-  <% @article.tags.each do |tag| %>
-    <%= link_to tag.name, tag_path(tag) %>
-  <% end %>
-</p><br/>
+    <!-- each tag -->
+    <p>
+      Tags:
+      <% @article.tags.each do |tag| %>
+        <button><%= link_to tag.name, tag_path(tag), class: "black_link"%></button>
+      <% end %>
+    </p>
+    <br/>
 
-<% if logged_in? %>
-  <!-- edit link -->
-  <%= link_to "edit", edit_article_path(@article) %>
-  <!-- delete link (confirm with user before deleting) -->
-  <%= link_to "delete", article_path(@article), method: :delete , data: {confirm: "Do you really want to delete the article?"} %><br/>
-  <br/>
-<% end %>
+    <!-- link to all articles -->
+    <%= link_to "<< Back to Articles List", articles_path, class: "button button-primary"%>
 
-<!-- comments section -->
-<h3>Comments (<%= @article.comments.size %>)</h3>
-<%= render partial: 'articles/comment', collection: @article.comments %>
+    <% if logged_in? %>
+      <!-- edit link -->
+      <%= link_to "edit", edit_article_path(@article) %>
+      <!-- delete link (confirm with user before deleting) -->
+      <%= link_to "delete", article_path(@article), method: :delete , data: {confirm: "Do you really want to delete the article?"} %><br/>        <br/>
+    <% end %>
+  </div>
+    <div class="CommentSection article_outline">
+      <!-- comments section -->
+      <div class="commentsHeader"><h5>Comments (<%= @article.comments.size %>)</h5></div>
+      <%= render partial: 'articles/comment', collection: @article.comments %>
 
-<!-- add a new comment -->
-<%= render partial: 'comments/form' %>
-
-<!-- link to all articles -->
-<%= link_to "<< Back to Articles List", articles_path %>
+      <!-- add a new comment -->
+      <%= render partial: 'comments/form' %>
+    </div>
+</div>

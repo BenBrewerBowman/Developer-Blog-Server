@@ -21,26 +21,24 @@
     <div class="navbar">
       <div class="container">
         <div class="navbar-list">
+          <!-- tags button -->
+          <div class="navbar-item"> <%= link_to "Tags", tags_path, class: "black_link" %></div>
           <!-- login button -->
           <div class="navbar-item">
             <% if logged_in? %>
-              <%= "Logged in as #{current_user.email}" %>
-              <%= link_to "(Logout)", logout_path %>
+              <span><%= "Logged in as #{current_user.username}" %></span>
+              <%= link_to "(Logout)", logout_path, class: "black_link" %>
             <% else %>
-              <%= link_to "(Login)", login_path %>
+              <%= link_to "(Login)", login_path, class: "black_link" %>
             <% end %>
           </div>
-          <!-- tags button -->
-          <div class="navbar-item"> <%= link_to "Tags", tags_path %></div>
         </div>
       </div>
     </div>
-
-
-      <div id="content">
-        <%= yield %>
-        <hr>
-      </div>
+    
+    <div id="content">
+      <%= yield %>
+    </div>
 
   </body>
 </html>

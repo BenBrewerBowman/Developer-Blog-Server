@@ -45,20 +45,49 @@ body{
   background-color: #ecf0f1;
 }
 
+.width80 {
+  width: 80%;
+}
+
+.inlineFloat{
+  display: block;
+  position: relative;
+  float: left;
+}
+
 .flash{
   position: absolute;
+}
+
+.black_link{
+  text-decoration: none;
+  color: black;
+}
+
+.centered{
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }
 
 .navbar{
   width: 100%;
   position: fixed;
+  background-color: #00E5FF;
+  // background-color: black;
+  z-index: 1;
 }
-
 .navbar-item{
   display: block;
   position: relative;
   float: right;
   text-align: -webkit-match-parent;
-  padding-right: 15px;
-  font-size: 20px;
+  padding: 8px 15px;
+  font-size: 16px;
+}
+.navbar-item span{
+  font-size: 16px;
+}
+.clear_navbar{
+  padding-top: 75px;
 }
