@@ -1,3 +1,10 @@
-<h1>Create a New Article</h1>
+<div id="show" class="container centered">
+  <div class="clear_navbar"></div>
 
-<%= render partial: 'form' %>
+  <h1>Create a New Article</h1>
+
+  <%= render partial: 'form' %>
+
+  <!-- link to all articles -->
+  <%= link_to "<< Back to Articles List", articles_path, class: "button button-primary"%>
+</div>

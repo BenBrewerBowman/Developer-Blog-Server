@@ -14,6 +14,14 @@
     <!-- body text -->
     <p><%= @article.body %></p><br/>
 
+    <% if logged_in? %>
+      <!-- edit link -->
+      <code><%= link_to "Edit", edit_article_path(@article)%></code>
+      <!-- delete link (confirm with user before deleting) -->
+      <code><%= link_to "Delete", article_path(@article), method: :delete , data: {confirm: "Do you really want to delete the article?"} %></code><br/>
+    <% end %>
+    <hr />
+
     <!-- each tag -->
     <p>
       Tags:
@@ -21,24 +29,18 @@
         <button><%= link_to tag.name, tag_path(tag), class: "black_link"%></button>
       <% end %>
     </p>
-    <br/>
 
     <!-- link to all articles -->
     <%= link_to "<< Back to Articles List", articles_path, class: "button button-primary"%>
-
-    <% if logged_in? %>
-      <!-- edit link -->
-      <%= link_to "edit", edit_article_path(@article) %>
-      <!-- delete link (confirm with user before deleting) -->
-      <%= link_to "delete", article_path(@article), method: :delete , data: {confirm: "Do you really want to delete the article?"} %><br/>        <br/>
-    <% end %>
+    <br/><br/>
   </div>
-    <div class="CommentSection article_outline">
-      <!-- comments section -->
-      <div class="commentsHeader"><h5>Comments (<%= @article.comments.size %>)</h5></div>
-      <%= render partial: 'articles/comment', collection: @article.comments %>
 
-      <!-- add a new comment -->
-      <%= render partial: 'comments/form' %>
-    </div>
+  <div class="CommentSection article_outline">
+    <!-- comments section -->
+    <div class="commentsHeader"><h5>Comments (<%= @article.comments.size %>)</h5></div>
+    <%= render partial: 'articles/comment', collection: @article.comments %>
+
+    <!-- add a new comment -->
+    <%= render partial: 'comments/form' %>
+  </div>
 </div>

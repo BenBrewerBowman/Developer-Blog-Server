@@ -11,12 +11,14 @@
   <div class="header">
     <h1>All Articles</h1>
   </div>
-  <div class="new_article_button">
-    <% if logged_in? %>
-      <a><%= link_to "Create a New Article", new_article_path, class: "button button-primary"%></a>
-    <% end %>
-  </div>
   <hr>
+  <% if logged_in? %>
+    <div class="centered">
+      <%= link_to "Create a New Article", new_article_path, class: "button button-primary"%>
+    </div>
+  <% end %>
+  </br>
+
 
   <ul id="articles">
     <% @articles.each do |article| %>

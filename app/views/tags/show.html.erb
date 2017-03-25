@@ -1,15 +1,18 @@
-<h1>Articles Tagged with <%= @tag.name.titleize %></h1>
+<div id="tagsShow" class="container centered">
+  <div class="clear_navbar"></div>
 
-<ul>
-	<% @tag.articles.each do |article| %>
-		<li><%= link_to article.title, article_path(article) %></li>
-	<% end %>
-<br/>
-<br/>
-<% if logged_in? %>
-  <%= link_to "Delete '#{@tag.name}' tag", tag_path(@tag), method: :delete , data: {confirm: "Do you really want to delete this tag?"} %><br/>
-	<br/>
-<% end %>
+	<h3>Articles tagged with "<%= @tag.name.titleize %>"</h3>
 
-  <%= link_to 'Back to Tags', tags_path, :class => "button" %>
-</ul>
+	<ul>
+		<% @tag.articles.each do |article| %>
+			<li><%= link_to article.title, article_path(article), class: "black_link" %></li>
+		<% end %>
+
+		<% if logged_in? %>
+			<code><%= link_to "Delete '#{@tag.name}' tag", tag_path(@tag), method: :delete , data: {confirm: "Do you really want to delete this tag?"} %></code><br/>
+
+		<% end %>
+		<br/><br/>
+		<%= link_to 'Back to Tags', tags_path, class: "button button-primary" %>
+	</ul>
+</div>
