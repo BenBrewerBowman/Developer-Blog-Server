@@ -21,8 +21,12 @@
     <div class="navbar">
       <div class="container">
         <div class="navbar-list">
+          <!-- Github icon -->
+          <div class="navbar-item"> <a href="https://github.com/BenBrewerBowman/Developer-Blog-Server"><%= image_tag("GitHub-Mark-32px.png", :alt => "Github Link", :class => "Github_logo") %></a></div>
           <!-- tags button -->
           <div class="navbar-item"> <%= link_to "Tags", tags_path, class: "black_link" %></div>
+          <!-- home -->
+          <div class="navbar-item"> <%= link_to "Home", articles_path, class: "black_link" %></div>
           <!-- login button -->
           <div class="navbar-item">
             <% if logged_in? %>
@@ -32,10 +36,11 @@
               <%= link_to "(Login)", login_path, class: "black_link" %>
             <% end %>
           </div>
+
         </div>
       </div>
     </div>
-    
+
     <div id="content">
       <%= yield %>
     </div>

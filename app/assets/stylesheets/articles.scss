@@ -44,7 +44,7 @@
   text-align: center;
 }
 #articles{
-  padding-left: 40px;
+  margin-left: 100px;
 }
 .article_title{
   text-decoration: none;
@@ -52,6 +52,10 @@
   font-family: 'Raleway', sans-serif;
   font-size: 36px;
 }
+.article_time{
+  font-size: 16px;
+}
+
 .article_outline{
   border-style: groove;
 }
@@ -91,6 +95,10 @@
 
   #Creator{
     font-size: 15px;
+  }
+
+  #articles{
+    margin-left: 0px;
   }
 
 }

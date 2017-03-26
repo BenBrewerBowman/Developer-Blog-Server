@@ -1,6 +1,10 @@
-<h1>Editing Author</h1>
+<div id="show" class="container centered ">
+  <div class="clear_navbar"></div>
 
-<%= render 'form', author: @author %>
+  <h1>Edit Author</h1>
 
-<%= link_to 'Show', @author %> |
-<%= link_to 'Back', authors_path %>
+  <%= render 'form', author: @author %>
+
+  <button><%= link_to 'Show', @author, class: "black_link" %></button>
+  <%= link_to 'Back', authors_path, class: "button button-primary" %>
+</div>

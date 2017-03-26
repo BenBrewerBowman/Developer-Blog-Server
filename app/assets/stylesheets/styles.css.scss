@@ -48,6 +48,9 @@ body{
 .width80 {
   width: 80%;
 }
+.widthShortInfo{
+  width: 300px;
+}
 
 .inlineFloat{
   display: block;
@@ -83,7 +86,7 @@ body{
   position: relative;
   float: right;
   text-align: -webkit-match-parent;
-  padding: 8px 15px;
+  padding: 8px 20px;
   font-size: 16px;
 }
 .navbar-item span{

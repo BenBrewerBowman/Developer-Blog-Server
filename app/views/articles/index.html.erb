@@ -20,12 +20,10 @@
   </br>
 
 
-  <ul id="articles">
+  <div id="articles">
     <% @articles.each do |article| %>
-      <li>
-        <%= link_to article.title, article_path(article), class: "black_link",
-        class: 'article_title', id: "article_#{article.id}" %>
-      </li>
+        <%= link_to article.title, article_path(article), class: "black_link", class: 'article_title', id: "article_#{article.id}" %>
+        <p class="article_time"><%= article.created_at.strftime("%B %d, %Y at %l:%M%P") %></p>
     <% end %>
-  </ul>
+  </div>
 </div>

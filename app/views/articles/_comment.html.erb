@@ -1,6 +1,6 @@
 <div class="eachComment container">
   <div class="inlineFloat authorName "><%= comment.author_name %></div>
-  <div class="timePosted">Posted <%= distance_of_time_in_words(comment.article.created_at, comment.created_at) %> later</div>
+  <div class="timePosted"><%= comment.created_at.strftime(" - %B %d, %Y at %l:%M%P") %></div>
   <p class="comment"><%= comment.body %></p>
   <hr />
 </div>

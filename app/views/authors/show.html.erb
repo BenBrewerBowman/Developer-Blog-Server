@@ -1,15 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div id="show" class="container centered ">
+  <div class="clear_navbar"></div>
 
-<p>
-  <strong>Username:</strong>
-  <%= @author.username %>
-</p>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @author.email %>
-</p>
+  <p>
+    <strong>Username:</strong>
+    <%= @author.username %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @author.email %>
+  </p>
 
 
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Back', authors_path %>
+  <button><%= link_to 'Edit', edit_author_path(@author), class: "black_link" %></button>
+  <%= link_to 'Back', authors_path, class: "button button-primary" %>
+
+</div>

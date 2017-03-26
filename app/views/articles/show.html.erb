@@ -6,6 +6,7 @@
     <div class="article_name">
       <h1><%= @article.title %></h1>
     </div>
+    <p class="article_time"><%= @article.created_at.strftime("%B %d, %Y at %l:%M%P") %></p>
     <!-- image -->
     <div class="article_image">
       <p><%= image_tag @article.image.url %></p>
