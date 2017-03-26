@@ -13,7 +13,9 @@
     </div>
 
     <!-- body text -->
-    <p><%= @article.body %></p><br/>
+    <div class="width80 body">
+      <p><%= @article.body %></p><br/>
+    </div>
 
     <% if logged_in? %>
       <!-- edit link -->
