@@ -1,29 +1,17 @@
 <div id="show" class="container centered ">
   <div class="clear_navbar"></div>
-
   <%= form_for(@article) do |f| %>
-
     <ul>
     <% @article.errors.full_messages.each do |error| %>
       <li><%= error %></li>
     <% end %>
     </ul>
-
     <!-- article title -->
-    <p>
-      <%= f.text_field :title, class: "width80", placeholder: "Title"%>
-    </p>
-
+    <p><%= f.text_field :title, class: "width80", placeholder: "Title"%></p>
     <!-- article body  -->
-    <p>
-      <%= f.text_area :body, class: "width80", placeholder: "Content" %>
-    </p>
-
+    <p><%= f.text_area :body, class: "widthBigInfo", placeholder: "Content" %></p>
     <!-- tags -->
-    <p>
-    <%= f.text_field :tag_list, class: "width80", placeholder: "Tags   (separated by commas)" %>
-    </p>
-
+    <p><%= f.text_field :tag_list, class: "width80", placeholder: "Tags   (separated by commas)" %></p>
     <!-- Image attachment -->
     <p>
       <% if @article.image.exists? %>
@@ -32,12 +20,7 @@
       <%= f.label :image, "Attach a New Image" %><br />
       <%= f.file_field :image %>
     </p>
-
     <!-- submit button -->
-    <p>
-      <%= f.submit %>
-    </p>
-
+    <p><%= f.submit %></p>
   <% end %>
-
 </div>

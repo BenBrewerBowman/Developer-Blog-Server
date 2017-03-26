@@ -1,66 +1,24 @@
-// $primary_color: #bdc3c7;
-//
-// body {
-//   background-color: $primary_color;
-//   font: {
-//     family: Verdana, Helvetica, Arial;
-//     size: 14px;
-//   }
-// }
-//
-// a {
-//   color: #0000FF;
-//   img {
-//     border: none;
-//   }
-// }
-//
-// .clear {
-//   clear: both;
-//   height: 0;
-//   overflow: hidden;
-// }
-//
-// #container {
-//   width: 75%;
-//   margin: 0 auto;
-//   background: #fff;
-//   padding: 20px 40px;
-//   border: solid 1px black;
-//   margin-top: 20px;
-// }
-//
-// #content {
-//   clear: both;
-//   padding-top: 20px;
-// }
-
-// for testing, delete later
-.showBox{
-  border: box;
-  border-style: dotted;
-}
-
 body{
   background-color: #ecf0f1;
 }
 
+// sizing text boxes
 .width80 {
   width: 80%;
 }
 .widthShortInfo{
   width: 300px;
 }
+.widthBigInfo{
+  width: 80%;
+  height: 200px;
+}
 
+//Appear inline
 .inlineFloat{
   display: block;
   position: relative;
   float: left;
-}
-
-.flash{
-  position: absolute;
-  z-index: 2;
 }
 
 .black_link{
@@ -68,12 +26,20 @@ body{
   color: black;
 }
 
+//center content
 .centered{
   text-align: center;
   margin: 0 auto;
   display: block;
 }
 
+// Updates sent to user
+.flash{
+  position: absolute;
+  z-index: 2;
+}
+
+//Fixed navbar on app
 .navbar{
   width: 100%;
   position: fixed;
@@ -92,6 +58,7 @@ body{
 .navbar-item span{
   font-size: 16px;
 }
+// Space below navigation bar
 .clear_navbar{
   padding-top: 75px;
 }
