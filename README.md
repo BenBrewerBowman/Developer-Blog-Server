@@ -8,4 +8,4 @@
 4. Migrations
 5. Views with forms, partials, and helpers
 6. RESTful design
-7. Gems for extra features
+7. Gems for extra features (paperclip, sorcery, skeleton)
