@@ -14,7 +14,7 @@
 
     <!-- body text -->
     <div class="width80 body">
-      <p><%= @article.body %></p><br/>
+      <%= h(@article.body).gsub(/\n/, '<br/>').html_safe %>
     </div>
 
     <% if logged_in? %>
